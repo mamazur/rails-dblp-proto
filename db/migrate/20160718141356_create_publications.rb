@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreatePublications < ActiveRecord::Migration
+class CreatePublications < ActiveRecord::Migration[6.0]
   def change
     create_table :publications do |t|
       t.integer :dblp_id

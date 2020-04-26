@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AddPublicationsToLecturer < ActiveRecord::Migration
+class AddPublicationsToLecturer < ActiveRecord::Migration[6.0]
   def change
     add_reference :publications, :lecturer, index: true, foreign_key: true
   end

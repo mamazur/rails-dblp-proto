@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateModuleDescriptions < ActiveRecord::Migration
+class CreateModuleDescriptions < ActiveRecord::Migration[6.0]
   def change
     create_table :module_descriptions do |t|
       t.string :name
