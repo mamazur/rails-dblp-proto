@@ -1,0 +1,31 @@
+# encoding: UTF-8
+
+<h1>Listing Lecturers</h1>
+
+<table  class="table table-striped" >	
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Family name</th>
+       <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lecturers.each do |lecturer| %>
+      <tr>
+        <td><%= lecturer.first_name %></td>
+        <td><%= lecturer.family_name %></td>
+        <td><%= link_to 'Show', lecturer, class: "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_lecturer_path(lecturer) , class: "btn btn-warning"%></td>
+        <td><%= link_to 'Destroy', lecturer, method: :delete, data: { confirm: 'Are you sure?' }  , class: "btn btn-danger"%></td>
+
+		 <td><%= link_to "DBLP", "http://dblp.uni-trier.de/search?q=#{lecturer.first_name}%20#{lecturer.family_name}", :target => "_blank" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lecturer', new_lecturer_path , class: 'btn btn-info' %>

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dblp_id: 1
+  publication_description: MyString
+
+two:
+  dblp_id: 1
+  publication_description: MyString

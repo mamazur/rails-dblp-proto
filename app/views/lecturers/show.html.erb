@@ -1,0 +1,31 @@
+
+
+
+<table  class="table table-striped" >	
+<tr class="default">
+<td ><%= @lecturer.first_name %></td><td><%= @lecturer.family_name %></td>
+</tr>
+</table>
+
+<table  class="table table-striped" >	
+  <thead>
+    <tr>
+      <th>Publication name</th>
+       <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+     <% @publications.each do |publication| %>
+      <tr>
+        <td><%= publication.publication_description %></td>
+		<td><%= link_to "DBLP", "http://dblp.uni-trier.de/rec/bibtex/#{publication.dblp_id}.xml", :target => "_blank" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<%= link_to 'Edit', edit_lecturer_path(@lecturer) %> |
+<%= link_to 'Back', lecturers_path %>

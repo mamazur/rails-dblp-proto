@@ -1,0 +1,36 @@
+ <%= errors_for(@module_description) %>
+<%= form_for(@module_description) do |f| %>
+
+  <div class="field">
+  <%= f.label "Lecturer Name" %><br />
+  <%= f.collection_check_boxes :lecturer_ids, Lecturer.all, :id, :family_name do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
+</div>
+<div class="col-sm-9">
+  <div   class="form-horizontal form-group-sm bg">   
+     <div class="form-group" >
+       <%= f.label :name, 'Name', class: "col-sm-3 control-label"%>
+         <div class="col-sm-6">
+          <%= f.text_field :name , class: "form-control"%>
+         </div>   
+     </div>  
+     <div class="form-group" >
+       <%= f.label :description, 'Description', class: "col-sm-3 control-label"%>
+         <div class="col-sm-6">
+          <%= f.text_area :description , class: "form-control", rows: "10"%>
+         </div>   
+     </div>  
+  </form>
+</div>
+
+
+  <div class="actions">
+    <%= f.submit nil, class: 'btn btn-primary' %> 
+  </div>
+<% end %>
+
+
