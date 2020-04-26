@@ -1,0 +1,17 @@
+%table.table.table-striped
+  %tr.default
+    %td= @lecturer.first_name
+    %td= @lecturer.family_name
+%table.table.table-striped
+  %thead
+    %tr
+      %th Publication name
+      %th{:colspan => "1"}
+  %tbody
+    - @publications.each do |publication|
+      %tr
+        %td= publication.publication_description
+        %td= link_to "DBLP", "http://dblp.uni-trier.de/rec/bibtex/#{publication.dblp_id}.xml", :target => "_blank"
+= link_to 'Edit', edit_lecturer_path(@lecturer)
+|
+= link_to 'Back', lecturers_path

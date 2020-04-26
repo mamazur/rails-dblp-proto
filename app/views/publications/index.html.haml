@@ -1,0 +1,20 @@
+
+%h1 Listing Publications
+%form{:method => "put "}
+  = select_tag(:lecturer_id, options_from_collection_for_select(Lecturer.all, :id, :family_name, :selected => params[:family_name]), {class: "form-control input-sm", :onchange => "this.form.submit();", prompt: "Select a lecturer name"})
+%table.table.table-striped
+  %thead
+    %tr
+      %th Lecturer
+      %th Dblp
+      %th Publication description
+
+  %tbody
+    - @publications.each do |publication|
+      %tr
+        %td
+          = publication.lecturer.first_name
+          = publication.lecturer.family_name
+        %td= publication.dblp_id
+        %td= publication.publication_description
+

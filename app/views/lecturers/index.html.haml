@@ -1,0 +1,18 @@
+%h1 Listing Lecturers
+%table.table.table-striped
+  %thead
+    %tr
+      %th First name
+      %th Family name
+      %th{:colspan => "4"}
+  %tbody
+    - @lecturers.each do |lecturer|
+      %tr
+        %td= lecturer.first_name
+        %td= lecturer.family_name
+        %td= link_to 'Show', lecturer, class: "btn btn-primary"
+        %td= link_to 'Edit', edit_lecturer_path(lecturer) , class: "btn btn-warning"
+        %td= link_to 'Destroy', lecturer, method: :delete, data: { confirm: 'Are you sure?' }  , class: "btn btn-danger"
+        %td= link_to "DBLP", "http://dblp.uni-trier.de/search?q=#{lecturer.first_name}%20#{lecturer.family_name}", :target => "_blank"
+%br
+= link_to 'New Lecturer', new_lecturer_path , class: 'btn btn-info'

@@ -1,0 +1,23 @@
+%h1= @module_description.name
+%table.table.table-striped
+  %thead
+    %tr
+      %th Lecturer:
+      %th{:colspan => "1"}
+  %tbody
+    - @module_description.lecturers.each do |lecturer|
+      %tr
+        %td
+          = lecturer.first_name
+          = lecturer.family_name
+        %td= link_to 'Link', lecturer_path(lecturer.id), :target => "_blank"
+%table.table.table-striped
+  %thead
+    %tr
+      %th Description:
+  %tbody
+    %tr
+      %td= @module_description.description
+= link_to 'Edit', edit_module_description_path(@module_description)
+|
+= link_to 'Back', module_descriptions_path

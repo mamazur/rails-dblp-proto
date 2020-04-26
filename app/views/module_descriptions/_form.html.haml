@@ -1,0 +1,21 @@
+= errors_for(@module_description)
+= form_for(@module_description) do |f|
+  .field
+    = f.label "Lecturer Name"
+    %br/
+    = f.collection_check_boxes :lecturer_ids, Lecturer.all, :id, :family_name do |b|
+      .collection-check-box
+        = b.check_box
+        = b.label
+  .col-sm-9
+    .form-horizontal.form-group-sm.bg
+      .form-group
+        = f.label :name, 'Name', class: "col-sm-3 control-label"
+        .col-sm-6
+          = f.text_field :name , class: "form-control"
+      .form-group
+        = f.label :description, 'Description', class: "col-sm-3 control-label"
+        .col-sm-6
+          = f.text_area :description , class: "form-control", rows: "10"
+    .actions
+      = f.submit nil, class: 'btn btn-primary'

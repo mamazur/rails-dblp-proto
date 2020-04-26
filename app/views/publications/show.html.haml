@@ -1,0 +1,13 @@
+%p
+  %strong Lecturer:
+  = @publication.lecturer.first_name
+  = @publication.lecturer.family_name
+%p
+  %strong Dblp:
+  = @publication.dblp_id
+%p
+  %strong Publication description:
+  = @publication.publication_description
+= link_to 'Edit', edit_publication_path(@publication)
+|
+= link_to 'Back', publications_path

@@ -1,0 +1,13 @@
+= form_for(@lecturer) do |f|
+  .form-horizontal.form-group-sm
+    .form-group
+      = f.label :first_name, 'First Name', class: "col-sm-3 control-label"
+      .col-sm-6
+        = f.text_field :first_name , placeholder: 'First Name' ,  class: "form-control"
+    .form-group
+      = f.label :family_name, 'Family Name', class: "col-sm-3 control-label"
+      .col-sm-6
+        = f.text_field :family_name , placeholder: 'Family Name' ,  class: "form-control"
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = submit_tag nil, class: "btn btn-info"

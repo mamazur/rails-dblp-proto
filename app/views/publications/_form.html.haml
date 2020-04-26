@@ -1,0 +1,11 @@
+= form_for(@publication) do |f|
+  .field
+    = f.label :dblp_id
+    %br/
+    = f.number_field :dblp_id
+  .field
+    = f.label :publication_description
+    %br/
+    = f.text_field :publication_description
+  .actions
+    = f.submit
