@@ -18,5 +18,17 @@
 @import "bootstrap";
 
 #wrapper {
-    padding: 2rem;
+  padding: 2rem;
+  width: 70%;
+  margin: auto;
+}
+
+.nav {
+  display: flex;
+  li > a {
+    background: grey;
+    color: white;
+    border-radius: 2rem;
+    margin-right:  1rem;
   }
+}
