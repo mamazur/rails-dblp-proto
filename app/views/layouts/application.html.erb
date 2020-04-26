@@ -12,33 +12,9 @@
       <%= link_to image_tag("logo.png"),  'https://www.hs-rm.de/de/'%>
     </div>
     <div id="wrapper">
-        <div class="container">
-          <div class="row">
-            <div class="">
-            </div>
-          </div>
-        </div>
-        <div class="container-fluid">
-          <!-- Sidebar -->
-          <div id="sidebar-wrapper">
-            <%= render 'layouts/navigation' %>
-          </div>
-          <!-- Page Content -->
-          <div id="page-content-wrapper">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-lg-12">
-                  <h1 style="display: none!important;">
-                    <%= controller_name %>
-                    </h1>
-                  <%= render 'layouts/messages' %>
-                  <%= yield %>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /#page-content-wrapper -->
-        </div>
+    <%= render 'layouts/navigation' %>
+    <%= yield %>
     </div>
+      
   </body>
 </html>

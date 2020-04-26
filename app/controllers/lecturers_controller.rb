@@ -13,31 +13,23 @@ class LecturersController < ApplicationController
   SEARCH_URL = '/search/author?xauthor='
   before_action :set_lecturer, only: %i[show edit update destroy]
 
-  # GET /lecturers
-  # GET /lecturers.json
   def index
     @lecturers = Lecturer.all
   end
 
-  # GET /lecturers/1
-  # GET /lecturers/1.json
   def show
     @publications = Publication.where(lecturer_id: params[:id])
   end
 
-  # GET /lecturers/new
   def new
     @lecturer = Lecturer.new
     @lecturer.publications.build
   end
 
-  # GET /lecturers/1/edit
   def edit
     @lecturer.publications.build
   end
 
-  # POST /lecturers
-  # POST /lecturers.json
   def create
     @lecturer = Lecturer.new(lecturer_params)
 
@@ -52,8 +44,6 @@ class LecturersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /lecturers/1
-  # PATCH/PUT /lecturers/1.json
   def update
     respond_to do |format|
       if @lecturer.update(lecturer_params)
@@ -79,8 +69,6 @@ class LecturersController < ApplicationController
     end
   end
 
-  # DELETE /lecturers/1
-  # DELETE /lecturers/1.json
   def destroy
     @lecturer.destroy
     respond_to do |format|
@@ -91,12 +79,10 @@ class LecturersController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_lecturer
     @lecturer = Lecturer.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def lecturer_params
     params.require(:lecturer).permit(:first_name, :family_name, publications_attributes: %i[dblp_id publication_description])
   end
