@@ -1,21 +1,19 @@
 = errors_for(@module_description)
 = form_for(@module_description) do |f|
-  .field
-    = f.label "Lecturer Name"
-    %br/
-    = f.collection_check_boxes :lecturer_ids, Lecturer.all, :id, :family_name do |b|
-      .collection-check-box
-        = b.check_box
-        = b.label
-  .col-sm-9
-    .form-horizontal.form-group-sm.bg
-      .form-group
-        = f.label :name, 'Name', class: "col-sm-3 control-label"
-        .col-sm-6
-          = f.text_field :name , class: "form-control"
-      .form-group
-        = f.label :description, 'Description', class: "col-sm-3 control-label"
-        .col-sm-6
-          = f.text_area :description , class: "form-control", rows: "10"
-    .actions
-      = f.submit nil, class: 'btn btn-primary'
+  .uk-form-horizontal.uk-margin-large
+    .uk-margin
+      = f.label "Lecturer", class: "uk-form-label"
+      .uk-form-controls
+        = f.collection_check_boxes :lecturer_ids, Lecturer.all, :id, :family_name do |b|
+          .collection-check-box
+            = b.check_box
+            = b.label
+    .uk-margin
+      = f.label :name, 'Name', class: "uk-form-label"
+      .uk-form-controls
+        = f.text_field :name , class: "uk-input"
+    .uk-margin
+      = f.label :description, 'Description', class: "uk-form-label"
+      .uk-form-controls
+        = f.text_area :description , class: "uk-textarea"
+  = f.submit 'Save',  class: "uk-button uk-button-primary uk-button-small"

@@ -1,8 +1,8 @@
 
-%h1 Listing Publications
-%form{:method => "put "}
-  = select_tag(:lecturer_id, options_from_collection_for_select(Lecturer.all, :id, :family_name, :selected => params[:family_name]), {class: "form-control input-sm", :onchange => "this.form.submit();", prompt: "Select a lecturer name"})
-%table.table.table-striped
+%h1 Publications
+%form{method: :put}
+  = select_tag(:lecturer_id, options_from_collection_for_select(Lecturer.all, :id, :family_name, :selected => params[:family_name]), {class: "uk-select", onchange: "this.form.submit();", prompt: "Select a lecturer name"})
+%table.uk-table
   %thead
     %tr
       %th Lecturer
@@ -13,8 +13,7 @@
     - @publications.each do |publication|
       %tr
         %td
-          = publication.lecturer.first_name
-          = publication.lecturer.family_name
+          = link_to "#{publication.lecturer.first_name} #{publication.lecturer.family_name}", lecturer_path(publication.lecturer), class: "uk-button uk-button-link"
         %td= publication.dblp_id
         %td= publication.publication_description
 

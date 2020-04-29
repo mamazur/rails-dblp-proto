@@ -1,7 +1,7 @@
 %h1
-  Listing Module Descriptions
+  Module Descriptions
   %small Informatics (M.Sc.)
-%table.table.table-striped
+%table.uk-table
   %thead
     %tr
       %th Name
@@ -10,8 +10,8 @@
     - @module_descriptions.each do |module_description|
       %tr
         %td= module_description.name
-        %td= link_to 'Show', module_description, class: "btn btn-primary"
-        %td= link_to 'Edit', edit_module_description_path(module_description), class: "btn btn-warning"
-        %td= link_to 'Destroy', module_description, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"
+        %td= link_to 'Show', module_description
+        %td= link_to 'Edit', edit_module_description_path(module_description)
+        %td= link_to 'Destroy', module_description, method: :delete, data: { confirm: 'Are you sure?' }
 %br
 = link_to 'New Module', new_module_description_path

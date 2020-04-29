@@ -1,12 +1,9 @@
-%table.table.table-striped
-  %tr.default
-    %td= @lecturer.first_name
-    %td= @lecturer.family_name
-%table.table.table-striped
-  %thead
-    %tr
-      %th Publication name
-      %th{:colspan => "1"}
+%h2.uk-heading-bullet
+  = @lecturer.first_name
+  = @lecturer.family_name
+%h3.uk-heading-divider
+  = 'Publications'
+%table.uk-table.uk-table-divider
   %tbody
     - @publications.each do |publication|
       %tr

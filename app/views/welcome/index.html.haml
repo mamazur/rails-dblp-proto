@@ -1,10 +1,15 @@
-%h3 Modulhandbuch
-%p
-  Dieses Projekt nutzte den Service von DBLP Computer Science Bibliography (Universität trier)
-  un das Modulhandbuch der HSRM mit den Publikationen zu ergänzen.
-%p
-  = link_to 'Hier', 'https://dblp.uni-trier.de/xml/docu/dblpxml.pdf'
-  kann man die Beschreibung der Schnittstelle herunterladen.
-%p
-  = link_to 'Hier', module_descriptions_path
-  finden Sie die Modulbeschreibungen aller Lehrveranstaltungen des Master-Studiengangs.
+%article.uk-article
+  %h3.uk-article-title
+    = 'Publication Project'
+  %p.uk-article-meta
+    Originally created by
+    %a{:href => "#"} Maria Mazur
+    as a PoC student project for Semantic Web seminar.
+  %p.uk-text-lead
+  %p Application allows user to link publications from the dblp computer science bibliography to any given lecturer.
+  %p The dblp computer science bibliography provides open bibliographic information on major computer science journals and proceedings.
+  %p Originally created at the University of Trier in 1993, dblp is now operated and further developed by Schloss Dagstuhl.
+  .uk-grid-small.uk-child-width-auto{"uk-grid" => ""}
+    %div
+      %a.uk-button.uk-button-text{:href => "https://dblp.uni-trier.de/xml/docu/dblpxml.pdf"} Read more
+
