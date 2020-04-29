@@ -1,12 +1,8 @@
 
-%nav.uk-navbar-container{"uk-navbar" => ""}
+%nav.uk-navbar-container
   .uk-navbar-left
     %ul.uk-navbar-nav
-      %li.uk-active
-        = link_to 'Home', welcome_index_path
       %li.uk-active
         = link_to 'Lecturers', lecturers_path
       %li.uk-parent
         = link_to 'Publikations', publications_path
-      %li
-        = link_to 'Modules', module_descriptions_path
